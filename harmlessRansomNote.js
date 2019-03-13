@@ -1,12 +1,16 @@
+//harmlessRansomeNote has a Big O of O ( n + m )
+
 function harmlessRansomeNote(noteText, magText) {
 		var noteArr = noteText.split( ' ' );
-		var magArr = magText.split('  ');
+		var magArr = magText.split(' ');
 		var magObj = {};
 
 		magArr.forEach( word => {
 				if(!magObj[word]) magObj[word] = 0;
 				 magObj[word] ++;
 		});
+  
+  //console.log(magObj); 
 
 		var noteIsPossible = true;
 		noteArr.forEach(word => {
@@ -17,20 +21,18 @@ function harmlessRansomeNote(noteText, magText) {
 			else noteIsPossible = false;
 		});
 
-		return noteIsPossible;
+		console.log(noteIsPossible);
 }
 
-//console.log( magObj )
 
 harmlessRansomeNote('this is a secret note for you from a secret admirer', 'puerto rico is a place of great wonder and excitement it has many secret waterfall locatoins that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited')
 
-//harmlessRansomeNote has a Big O of O ( n + m )
 
 //Big O Notation how long it takes for a algorithm will take to run
 
 
 //constant runtime
-// Big O notation: "0 (1)"
+// Big O notation: "O(1)"
 
 function log (array){
 	console.log(array[0]);
@@ -61,7 +63,7 @@ logAll([1,2,3,4,5,6,7,8,9]);
 function addAndLog(array) {
 	for ( var i = 0; i < array.length; i++ ){
 		for( var j = 0; j < array.length; j++ ){
-			console.log(array[1] + array[j]);
+			console.log(array[i] + array[j]);
 		}
 	}
 }

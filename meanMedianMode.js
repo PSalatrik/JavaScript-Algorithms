@@ -1,57 +1,54 @@
-function meanMedianMode(array) {
-		return {
-			mean: getMean(array),
-			mediam: getMedian(array),
-			mode: getMode(array)
-		}
+function meanMedianMode(array){
+	return{
+		mean: getMean(array);
+		median: getMedian(array);
+		mode: getMode(array);
+	}
 }
 
-function getMean(array) {
+function getMean(array){
 	var sum = 0;
-
-	aray.forEach ( num => {
+	forEach( num =>{
 		sum += num;
 	});
-
-	var mean = sum / array.length;
+	mean = sum / array.length;
 	return mean;
 }
 
-function getMedian(array) {
-	array.sort(function(a,b){retrun a - b});
-	var median;
+function getMedian(array){
+	array = array.sort(function(a,b){return a - b});
 
-	if (array.length % 2 !== 0) { //the length of our array is not an even number
-			median = array[Math.floor(array.length / 2)]
+	if( array.length % 2 !== 0 ){
+		var median = array[Math.floor(array.length /2)];
 	}
-	else {
-		var mid1 = array[(array.length /2) -1 ]
-		var mid2 - array array[array.length /2]
-		median = (mid1 + mid2 / 2);
-		return median
+	else{
+		var med1 = array[(array.length /2) -1];
+		var med2 = array[array.length /2];
+		median = mid1 + mid2 /2;
 	}
 
+	return median;
 }
 
 function getMode(array){
 	var modeObj = {};
 
-	array.forEach(num => {
-		if(!modeObj[num]) modeObj[num] =0;
-		modeObj[num]++;
+	array.forEach(num=>{
+		if(!modeObj[num]) modeObj[num] = 0;
+		modeObj[num] ++;
 	});
 
 	var maxFreq = 0;
-	var mode = [];
-	for(var num in modeObj) {
-		if(modeObj[num] > maxFreq)	{
-			modes = [ num ];
-			maxFreq = modeObj[num];
-		}
+	var modes = [];
 
-		elseif (modeObj[num] === maxFreq) modes.push(num);
+	for( var num in modeObj ){
+		if( modeObj[num] > maxFreq ){
+			maxFreq = modeObj[num];
+			modes = [num];
+		}
+		else if(modeObj[num] === maxFreq) modes.push(num);
 	}
-	if (modes.length === object.keys(modeObj).length) modes = [];
+	if(modes.length === Object.keys(modeObj).length) modes = [];
 	return modes;
 }
 

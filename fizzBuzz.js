@@ -10,11 +10,4 @@ function fizzBuzz(num) {
 
 fizzBuzz(20);
 
-fizzBuzz(30)
-
-
-
-console.log (7 % 3);
-//should return 1
-console.log(100 % 30);
-//should return 10 
+fizzBuzz(30);
